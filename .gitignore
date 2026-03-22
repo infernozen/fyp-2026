@@ -1,0 +1,19 @@
+# Python caches
+**/__pycache__/
+**/*.py[cod]
+**/*.pyo
+
+# Virtual environments
+**/.venv/
+**/venv/
+**/env/
+FloorNet/floornet-env/
+plan2scene/plan2scene36/
+
+# Large local datasets / generated artifacts
+FloorNet/data/
+FloorNet/test/
+
+# Local binaries/installers
+**/*.whl
+**/*.msi
