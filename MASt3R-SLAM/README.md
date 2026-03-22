@@ -25,7 +25,6 @@ bash ./scripts/download_euroc.sh
 bash ./scripts/download_eth3d.sh
 ```
 
----
 
 ## Software and Hardware Requirements
 
