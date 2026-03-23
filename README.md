@@ -575,16 +575,16 @@ flowchart LR
 
 ```mermaid
 flowchart TD
-	IN[Input Mobile Video (URI)] --> API[POST /pipeline/run]
-	API --> ORCH[Cloud Run Orchestrator]
-	ORCH --> TRACE[Bridge Trace + Contribution Layer]
-	ORCH --> GEO[Geometry Outputs]
-	GEO --> FP[FLOORPLAN Outputs]
-	FP --> LAY[Layout Outputs]
-	LAY --> SCN[Scene JSON + Texture Outputs]
-	SCN --> AST[Generated Assets]
-	AST --> PKG[Final Scene Bundle]
-	TRACE --> RESP[API Response Payload]
+	IN["Input Mobile Video (URI)"] --> API["POST /pipeline/run"]
+	API --> ORCH["Cloud Run Orchestrator"]
+	ORCH --> TRACE["Bridge Trace + Contribution Layer"]
+	ORCH --> GEO["Geometry Outputs"]
+	GEO --> FP["FLOORPLAN Outputs"]
+	FP --> LAY["Layout Outputs"]
+	LAY --> SCN["Scene JSON + Texture Outputs"]
+	SCN --> AST["Generated Assets"]
+	AST --> PKG["Final Scene Bundle"]
+	TRACE --> RESP["API Response Payload"]
 	PKG --> RESP
 ```
 
