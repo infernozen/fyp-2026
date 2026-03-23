@@ -1,0 +1,30 @@
+apiVersion: serving.knative.dev/v1
+kind: Service
+metadata:
+  name: fyp-2026-orchestrator
+  annotations:
+    run.googleapis.com/ingress: all
+    run.googleapis.com/execution-environment: gen2
+spec:
+  template:
+    metadata:
+      annotations:
+        autoscaling.knative.dev/minScale: "0"
+        autoscaling.knative.dev/maxScale: "10"
+        run.googleapis.com/cpu-throttling: "true"
+    spec:
+      containerConcurrency: 16
+      timeoutSeconds: 900
+      containers:
+        - image: REGION-docker.pkg.dev/PROJECT_ID/fyp-2026/fyp-2026-orchestrator:latest
+          ports:
+            - containerPort: 8080
+          env:
+            - name: REGION
+              value: asia-south1
+            - name: PIPELINE_MODE
+              value: demo
+          resources:
+            limits:
+              cpu: "2"
+              memory: "4Gi"
